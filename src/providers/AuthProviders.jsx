@@ -1,12 +1,14 @@
 import { createContext } from "react";
 
-const AuthContext = createContext(null);
+export const AuthContext = createContext(null);
 
-const AuthProviders = () => {
+// eslint-disable-next-line react/prop-types
+const AuthProviders = ({children}) => {
+    const user = {displayName: 'Fayshal'}
     return (
-        <div>
-            
-        </div>
+        <AuthContext.Provider value={user}>
+            {children}
+        </AuthContext.Provider>
     );
 };
 
